@@ -255,7 +255,8 @@ class Tiqr_Service
             }
 
             $message = new $class($this->_options);
-            $message->setId($sessionKey);
+            $message->setId(time());
+//            $message->setId($sessionKey);
             $message->setText("Please authenticate for " . $this->_name);
             $message->setAddress($notificationAddress);
             $message->setCustomProperty('challenge', $this->_getChallengeUrl($sessionKey));
